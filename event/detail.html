@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../img/favicon.png">
+  <title>YSCine - 이벤트</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="css/detail.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="index-page event-detail-page">
+  <div id="site-header"></div>
+
+  <main class="event-detail-main" id="event-detail-main" hidden>
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <a href="../index.html" class="breadcrumb__home" aria-label="홈">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V9.5z"></path>
+        </svg>
+      </a>
+      <span class="breadcrumb__sep">&gt;</span>
+      <a href="list.html" class="breadcrumb__link">이벤트</a>
+      <span class="breadcrumb__sep">&gt;</span>
+      <span class="breadcrumb__current" id="breadcrumb-title">상세</span>
+    </nav>
+
+    <article class="event-detail">
+      <header class="event-detail__header">
+        <span class="event-detail__category" id="event-category"></span>
+        <h1 class="event-detail__title" id="event-title"></h1>
+        <p class="event-detail__meta" id="event-meta"></p>
+      </header>
+
+      <div class="event-detail__divider" aria-hidden="true"></div>
+
+      <div class="event-detail__poster-wrap" id="event-poster-wrap" hidden>
+        <img class="event-detail__poster" id="event-poster" src="" alt="">
+      </div>
+
+      <div class="event-detail__body" id="event-body"></div>
+
+      <div class="event-detail__divider" aria-hidden="true"></div>
+
+      <nav class="event-detail__adj" aria-label="이전글 다음글">
+        <div class="event-detail__adj-row">
+          <a class="event-detail__adj-cell event-detail__adj-cell--prev" id="event-prev">
+            <span class="event-detail__adj-chevron" aria-hidden="true">&lsaquo;</span>
+            <span class="event-detail__adj-label">이전 글</span>
+            <span class="event-detail__adj-title" id="event-prev-title"></span>
+          </a>
+          <a class="event-detail__adj-cell event-detail__adj-cell--next" id="event-next">
+            <span class="event-detail__adj-title" id="event-next-title"></span>
+            <span class="event-detail__adj-label">다음 글</span>
+            <span class="event-detail__adj-chevron" aria-hidden="true">&rsaquo;</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="event-detail__actions">
+        <a href="list.html" class="event-detail__list-btn" id="event-list-btn">
+          <span class="event-detail__list-btn-icon" aria-hidden="true">←</span>
+          목록으로
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <p class="event-detail-error" id="event-detail-error" hidden>이벤트를 찾을 수 없습니다.</p>
+
+  <div id="site-footer"></div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="js/events-data.js"></script>
+  <script src="js/detail.js"></script>
+</body>
+</html>

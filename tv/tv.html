@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../img/favicon.png">
+  <title>YSCine - TV</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="css/tv.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="index-page tv-page">
+  <div id="site-header"></div>
+
+  <main class="tv-main">
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <a href="../index.html" class="breadcrumb__home" aria-label="홈">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V9.5z"></path>
+        </svg>
+      </a>
+      <span class="breadcrumb__sep">&gt;</span>
+      <a href="tv.html" class="breadcrumb__link">TV</a>
+      <span class="breadcrumb__sep">&gt;</span>
+      <span class="breadcrumb__current" id="breadcrumb-current">방영 중</span>
+    </nav>
+
+    <div class="tv-head">
+      <h1 class="tv-head__title" id="page-title">방영 중</h1>
+      <div class="tv-filters" id="category-filters">
+        <button type="button" class="filter-btn filter-btn--active" data-category="on-the-air">방영 중</button>
+        <button type="button" class="filter-btn" data-category="popular">인기 시리즈</button>
+      </div>
+    </div>
+
+    <div class="tv-toolbar">
+      <p class="tv-count" id="tv-count">0개의 시리즈</p>
+      <div class="tv-sort">
+        <button type="button" class="sort-btn sort-btn--active" data-sort="release">방영일순</button>
+        <span class="tv-sort__sep">|</span>
+        <button type="button" class="sort-btn" data-sort="title">가나다순</button>
+      </div>
+    </div>
+
+    <div class="tv-grid" id="tv-grid">
+      <p class="tv-loading" id="tv-loading">TV 시리즈를 불러오는 중...</p>
+    </div>
+    <p class="tv-error" id="tv-error" hidden></p>
+
+    <nav class="pagination" id="pagination" aria-label="페이지네이션" hidden>
+      <button type="button" class="pagination__btn" id="page-first" aria-label="첫 페이지">&laquo;</button>
+      <button type="button" class="pagination__btn" id="page-prev" aria-label="이전 페이지">&lsaquo;</button>
+      <div class="pagination__current">
+        <select class="pagination__select" id="page-select" aria-label="페이지 선택"></select>
+        <span id="page-total">/ 1</span>
+      </div>
+      <button type="button" class="pagination__btn" id="page-next" aria-label="다음 페이지">&rsaquo;</button>
+      <button type="button" class="pagination__btn" id="page-last" aria-label="마지막 페이지">&raquo;</button>
+    </nav>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="js/tv.js"></script>
+</body>
+</html>

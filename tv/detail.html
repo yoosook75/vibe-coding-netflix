@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../img/favicon.png">
+  <title>YSCine - TV 상세</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="css/detail.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="index-page detail-page">
+  <div id="site-header"></div>
+
+  <main class="detail-main" id="detail-main" hidden>
+    <section class="detail-summary">
+      <div class="detail-summary__poster">
+        <img class="detail-summary__img" id="movie-poster" src="" alt="">
+        <img class="detail-summary__thumb" id="movie-poster-thumb" src="" alt="">
+      </div>
+
+      <div class="detail-summary__info">
+        <p class="detail-summary__en" id="movie-en-title"></p>
+        <h1 class="detail-summary__title" id="movie-title"></h1>
+
+        <dl class="detail-info-box">
+          <div class="detail-info-box__row">
+            <dt>제작</dt>
+            <dd id="movie-director">-</dd>
+          </div>
+          <div class="detail-info-box__row">
+            <dt>출연</dt>
+            <dd id="movie-cast">-</dd>
+          </div>
+          <div class="detail-info-box__row">
+            <dt>정보</dt>
+            <dd id="movie-info-meta"></dd>
+          </div>
+          <div class="detail-info-box__row">
+            <dt>첫 방영</dt>
+            <dd id="movie-release">-</dd>
+          </div>
+        </dl>
+
+        <div class="detail-actions">
+          <button type="button" class="detail-actions__share" id="share-btn" aria-label="공유">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"></path>
+            </svg>
+          </button>
+          <button type="button" class="detail-actions__book">시리즈 보기 →</button>
+        </div>
+      </div>
+    </section>
+
+    <nav class="detail-tabs" id="detail-tabs">
+      <button type="button" class="detail-tab detail-tab--active" data-target="section-info">주요정보</button>
+      <button type="button" class="detail-tab" data-target="section-clips">무비클립</button>
+      <button type="button" class="detail-tab" data-target="section-stills">스틸컷</button>
+      <button type="button" class="detail-tab" data-target="section-reviews">리뷰</button>
+    </nav>
+
+    <div class="detail-content">
+      <section class="detail-section" id="section-info">
+        <p class="detail-synopsis" id="movie-overview"></p>
+      </section>
+
+      <section class="detail-section" id="section-clips">
+        <h2 class="detail-section__title">무비클립</h2>
+        <div class="detail-clips" id="movie-clips"></div>
+      </section>
+
+      <section class="detail-section" id="section-stills" hidden>
+        <h2 class="detail-section__title">
+          스틸컷 <span class="detail-section__count" id="stills-count">0</span>
+        </h2>
+        <div class="detail-stills" id="movie-stills"></div>
+      </section>
+
+      <section class="detail-section" id="section-reviews">
+        <h2 class="detail-section__title">
+          리뷰 <span class="detail-section__count" id="reviews-count">0</span>
+        </h2>
+        <ul class="detail-reviews" id="movie-reviews"></ul>
+      </section>
+    </div>
+  </main>
+
+  <div class="detail-loading" id="detail-loading">TV 시리즈 정보를 불러오는 중...</div>
+  <p class="detail-error" id="detail-error" hidden></p>
+
+  <div class="video-modal" id="video-modal" hidden aria-hidden="true">
+    <div class="video-modal__backdrop" id="video-modal-backdrop"></div>
+    <div class="video-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="video-modal-title">
+      <button type="button" class="video-modal__close" id="video-modal-close" aria-label="닫기">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12"></path>
+        </svg>
+      </button>
+      <p class="video-modal__title" id="video-modal-title"></p>
+      <div class="video-modal__player" id="video-modal-player"></div>
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="js/detail.js"></script>
+</body>
+</html>

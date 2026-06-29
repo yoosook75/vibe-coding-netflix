@@ -1,0 +1,113 @@
+﻿<header class="index-header">
+  <div class="index-header__inner">
+    <a href="{{BASE}}index.html" class="index-logo">
+      <img src="{{BASE}}img/logo.png" alt="YSCine" class="index-logo__img">
+    </a>
+
+    <nav class="index-nav" aria-label="주 메뉴">
+      <a href="{{BASE}}index.html" class="index-nav__link" data-nav="home">홈</a>
+
+      <div class="index-nav__item index-nav__item--dropdown" data-nav-group="movies">
+        <a href="{{BASE}}movies/movies.html" class="index-nav__link" data-nav="movies">영화</a>
+      </div>
+
+      <div class="index-nav__item index-nav__item--dropdown" data-nav-group="tv">
+        <a href="{{BASE}}tv/tv.html" class="index-nav__link" data-nav="tv">TV</a>
+      </div>
+
+      <div class="index-nav__item index-nav__item--dropdown" data-nav-group="events">
+        <a href="{{BASE}}event/list.html" class="index-nav__link" data-nav="events">이벤트</a>
+      </div>
+
+      <div class="index-nav__item index-nav__item--dropdown" data-nav-group="community">
+        <a href="{{BASE}}board/list.html" class="index-nav__link" data-nav="community">커뮤니티</a>
+      </div>
+    </nav>
+
+    <div class="index-header__actions">
+      <form class="search-form" id="header-search-form" role="search">
+        <input
+          type="search"
+          class="search-form__input"
+          id="header-search-input"
+          placeholder="영화 검색"
+          aria-label="영화 검색"
+        >
+        <button type="submit" class="search-form__btn" aria-label="검색">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="M20 20l-4-4"></path>
+          </svg>
+        </button>
+      </form>
+
+      <button
+        type="button"
+        class="index-menu-toggle"
+        id="menu-toggle"
+        aria-label="메뉴 열기"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        <span class="index-menu-toggle__bar" aria-hidden="true"></span>
+        <span class="index-menu-toggle__bar" aria-hidden="true"></span>
+        <span class="index-menu-toggle__bar" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="index-mobile-nav" id="mobile-nav" aria-label="모바일 메뉴" hidden>
+    <div class="index-mobile-nav__backdrop" id="mobile-nav-backdrop"></div>
+    <div class="index-mobile-nav__panel">
+      <a href="{{BASE}}index.html" class="index-mobile-nav__link" data-nav="home">홈</a>
+
+      <div class="index-mobile-nav__group">
+        <p class="index-mobile-nav__label">영화</p>
+        <a href="{{BASE}}movies/movies.html" class="index-mobile-nav__sublink" data-nav="movies">영화 홈</a>
+        <a href="{{BASE}}movies/movies.html?category=now-playing" class="index-mobile-nav__sublink">현재 상영작</a>
+        <a href="{{BASE}}movies/movies.html?category=upcoming" class="index-mobile-nav__sublink">상영 예정작</a>
+      </div>
+
+      <div class="index-mobile-nav__group">
+        <p class="index-mobile-nav__label">TV</p>
+        <a href="{{BASE}}tv/tv.html" class="index-mobile-nav__sublink" data-nav="tv">TV 홈</a>
+        <a href="{{BASE}}tv/tv.html?category=on-the-air" class="index-mobile-nav__sublink">방영 중</a>
+        <a href="{{BASE}}tv/tv.html?category=popular" class="index-mobile-nav__sublink">인기 시리즈</a>
+      </div>
+
+      <div class="index-mobile-nav__group">
+        <p class="index-mobile-nav__label">이벤트</p>
+        <a href="{{BASE}}event/list.html" class="index-mobile-nav__sublink" data-nav="events">이벤트 홈</a>
+        <a href="{{BASE}}event/list.html?category=onsite" class="index-mobile-nav__sublink">현장 이벤트</a>
+        <a href="{{BASE}}event/list.html?category=preview" class="index-mobile-nav__sublink">시사회</a>
+        <a href="{{BASE}}event/list.html?category=cinetalk" class="index-mobile-nav__sublink">씨네토크</a>
+      </div>
+
+      <div class="index-mobile-nav__group">
+        <p class="index-mobile-nav__label">커뮤니티</p>
+        <a href="{{BASE}}board/list.html" class="index-mobile-nav__sublink" data-nav="community">공지사항</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="index-header__mega" aria-label="서브 메뉴">
+    <div class="index-header__mega-inner">
+      <div class="index-header__mega-col index-header__mega-col--movies" data-mega="movies">
+        <a href="{{BASE}}movies/movies.html?category=now-playing" class="index-header__mega-link">현재 상영작</a>
+        <a href="{{BASE}}movies/movies.html?category=upcoming" class="index-header__mega-link">상영 예정작</a>
+      </div>
+      <div class="index-header__mega-col index-header__mega-col--tv" data-mega="tv">
+        <a href="{{BASE}}tv/tv.html?category=on-the-air" class="index-header__mega-link">방영 중</a>
+        <a href="{{BASE}}tv/tv.html?category=popular" class="index-header__mega-link">인기 시리즈</a>
+      </div>
+      <div class="index-header__mega-col index-header__mega-col--events" data-mega="events">
+        <a href="{{BASE}}event/list.html?category=onsite" class="index-header__mega-link">현장 이벤트</a>
+        <a href="{{BASE}}event/list.html?category=preview" class="index-header__mega-link">시사회</a>
+        <a href="{{BASE}}event/list.html?category=cinetalk" class="index-header__mega-link">씨네토크</a>
+      </div>
+      <div class="index-header__mega-col index-header__mega-col--community" data-mega="community">
+        <a href="{{BASE}}board/list.html" class="index-header__mega-link">공지사항</a>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../img/favicon.png">
+  <title>YSCine - 영화</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="css/movies.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="index-page movies-page">
+  <div id="site-header"></div>
+
+  <main class="movies-main">
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <a href="../index.html" class="breadcrumb__home" aria-label="홈">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V9.5z"></path>
+        </svg>
+      </a>
+      <span class="breadcrumb__sep">&gt;</span>
+      <a href="movies.html" class="breadcrumb__link">영화</a>
+      <span class="breadcrumb__sep">&gt;</span>
+      <span class="breadcrumb__current" id="breadcrumb-current">현재 상영작</span>
+    </nav>
+
+    <div class="movies-head">
+      <h1 class="movies-head__title" id="page-title">현재 상영작</h1>
+      <div class="movies-filters" id="category-filters">
+        <button type="button" class="filter-btn filter-btn--active" data-category="now-playing">현재 상영작</button>
+        <button type="button" class="filter-btn" data-category="upcoming">상영 예정작</button>
+      </div>
+    </div>
+
+    <div class="movies-toolbar">
+      <p class="movies-count" id="movie-count">0개의 영화</p>
+      <div class="movies-sort">
+        <button type="button" class="sort-btn sort-btn--active" data-sort="release">개봉일순</button>
+        <span class="movies-sort__sep">|</span>
+        <button type="button" class="sort-btn" data-sort="title">가나다순</button>
+      </div>
+    </div>
+
+    <div class="movies-grid" id="movies-grid">
+      <p class="movies-loading" id="movies-loading">영화를 불러오는 중...</p>
+    </div>
+    <p class="movies-error" id="movies-error" hidden></p>
+
+    <nav class="pagination" id="pagination" aria-label="페이지네이션" hidden>
+      <button type="button" class="pagination__btn" id="page-first" aria-label="첫 페이지">&laquo;</button>
+      <button type="button" class="pagination__btn" id="page-prev" aria-label="이전 페이지">&lsaquo;</button>
+      <div class="pagination__current">
+        <select class="pagination__select" id="page-select" aria-label="페이지 선택"></select>
+        <span id="page-total">/ 1</span>
+      </div>
+      <button type="button" class="pagination__btn" id="page-next" aria-label="다음 페이지">&rsaquo;</button>
+      <button type="button" class="pagination__btn" id="page-last" aria-label="마지막 페이지">&raquo;</button>
+    </nav>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="js/movies.js"></script>
+</body>
+</html>

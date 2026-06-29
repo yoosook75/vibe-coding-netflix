@@ -1,0 +1,19 @@
+# TMDB API key (copy config.example.js → config.js and fill in your key)
+js/config.js
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Dependencies (if added later)
+node_modules/
+dist/

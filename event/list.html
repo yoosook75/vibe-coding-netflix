@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../img/favicon.png">
+  <title>YSCine - 이벤트</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="css/event.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="index-page event-page">
+  <div id="site-header"></div>
+
+  <main class="event-main">
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <a href="../index.html" class="breadcrumb__home" aria-label="홈">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V9.5z"></path>
+        </svg>
+      </a>
+      <span class="breadcrumb__sep">&gt;</span>
+      <span class="breadcrumb__current">이벤트</span>
+    </nav>
+
+    <div class="event-head">
+      <h1 class="event-head__title">이벤트</h1>
+      <div class="event-filters" id="event-filters">
+        <button type="button" class="event-filter-btn event-filter-btn--active" data-category="onsite">현장이벤트</button>
+        <button type="button" class="event-filter-btn" data-category="cinetalk">씨네토크</button>
+        <button type="button" class="event-filter-btn" data-category="preview">시사회</button>
+        <button type="button" class="event-filter-btn" data-category="other">기타이벤트</button>
+        <button type="button" class="event-filter-btn" data-category="past">지난이벤트</button>
+      </div>
+    </div>
+
+    <p class="event-count" id="event-count">0개의 이벤트</p>
+
+    <div class="event-grid" id="event-grid">
+      <p class="event-loading" id="event-loading">이벤트를 불러오는 중...</p>
+    </div>
+    <p class="event-empty" id="event-empty" hidden>표시할 이벤트가 없습니다.</p>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="js/events-data.js"></script>
+  <script src="js/event.js"></script>
+</body>
+</html>

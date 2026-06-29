@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../img/favicon.png">
+  <title>YSCine - 공지사항</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="css/detail.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="index-page board-detail-page">
+  <div id="site-header"></div>
+
+  <main class="board-detail-main" id="board-detail-main" hidden>
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <a href="../index.html" class="breadcrumb__home" aria-label="홈">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V9.5z"></path>
+        </svg>
+      </a>
+      <span class="breadcrumb__sep">&gt;</span>
+      <a href="list.html" class="breadcrumb__link">공지사항</a>
+      <span class="breadcrumb__sep">&gt;</span>
+      <span class="breadcrumb__current" id="breadcrumb-title">상세</span>
+    </nav>
+
+    <article class="board-detail">
+      <header class="board-detail__header">
+        <span class="board-detail__category" id="board-category" hidden>공지</span>
+        <h1 class="board-detail__title" id="board-title"></h1>
+        <p class="board-detail__meta" id="board-meta"></p>
+      </header>
+
+      <div class="board-detail__divider" aria-hidden="true"></div>
+
+      <div class="board-detail__poster-wrap" id="board-poster-wrap" hidden>
+        <img class="board-detail__poster" id="board-poster" src="" alt="">
+      </div>
+
+      <div class="board-detail__body" id="board-body"></div>
+
+      <div class="board-detail__divider" aria-hidden="true"></div>
+
+      <nav class="board-detail__adj" aria-label="이전글 다음글">
+        <div class="board-detail__adj-row">
+          <a class="board-detail__adj-cell board-detail__adj-cell--prev" id="board-prev">
+            <span class="board-detail__adj-chevron" aria-hidden="true">&lsaquo;</span>
+            <span class="board-detail__adj-label">이전 글</span>
+            <span class="board-detail__adj-title" id="board-prev-title"></span>
+          </a>
+          <a class="board-detail__adj-cell board-detail__adj-cell--next" id="board-next">
+            <span class="board-detail__adj-title" id="board-next-title"></span>
+            <span class="board-detail__adj-label">다음 글</span>
+            <span class="board-detail__adj-chevron" aria-hidden="true">&rsaquo;</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="board-detail__actions">
+        <a href="list.html" class="board-detail__list-btn" id="board-list-btn">
+          <span class="board-detail__list-btn-icon" aria-hidden="true">←</span>
+          목록으로
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <p class="board-detail-error" id="board-detail-error" hidden>공지사항을 찾을 수 없습니다.</p>
+
+  <div id="site-footer"></div>
+
+  <script src="../js/layout.js"></script>
+  <script src="js/notices-data.js"></script>
+  <script src="js/detail.js"></script>
+</body>
+</html>

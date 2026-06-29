@@ -1,0 +1,312 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <title>YSCine - 영화</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="index-page">
+  <header class="index-header">
+    <div class="index-header__inner">
+      <a href="index.html" class="index-logo">
+        <img src="img/logo.png" alt="YSCine" class="index-logo__img">
+      </a>
+
+      <nav class="index-nav" aria-label="주 메뉴">
+        <a href="index.html" class="index-nav__link index-nav__link--active" data-nav="home">홈</a>
+
+        <div class="index-nav__item index-nav__item--dropdown" data-nav-group="movies">
+          <a href="movies/movies.html" class="index-nav__link" data-nav="movies">영화</a>
+        </div>
+
+        <div class="index-nav__item index-nav__item--dropdown" data-nav-group="tv">
+          <a href="tv/tv.html" class="index-nav__link" data-nav="tv">TV</a>
+        </div>
+
+        <div class="index-nav__item index-nav__item--dropdown" data-nav-group="events">
+          <a href="event/list.html" class="index-nav__link" data-nav="events">이벤트</a>
+        </div>
+
+        <div class="index-nav__item index-nav__item--dropdown" data-nav-group="community">
+          <a href="board/list.html" class="index-nav__link" data-nav="community">커뮤니티</a>
+        </div>
+      </nav>
+
+      <div class="index-header__actions">
+        <form class="search-form" id="search-form" role="search">
+          <input
+            type="search"
+            class="search-form__input"
+            id="search-input"
+            placeholder="영화 검색"
+            aria-label="영화 검색"
+          >
+          <button type="submit" class="search-form__btn" aria-label="검색">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="M20 20l-4-4"></path>
+            </svg>
+          </button>
+        </form>
+
+        <button
+          type="button"
+          class="index-menu-toggle"
+          id="menu-toggle"
+          aria-label="메뉴 열기"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+        >
+          <span class="index-menu-toggle__bar" aria-hidden="true"></span>
+          <span class="index-menu-toggle__bar" aria-hidden="true"></span>
+          <span class="index-menu-toggle__bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="index-mobile-nav" id="mobile-nav" aria-label="모바일 메뉴" hidden>
+      <div class="index-mobile-nav__backdrop" id="mobile-nav-backdrop"></div>
+      <div class="index-mobile-nav__panel">
+        <a href="index.html" class="index-mobile-nav__link" data-nav="home">홈</a>
+
+        <div class="index-mobile-nav__group">
+          <p class="index-mobile-nav__label">영화</p>
+          <a href="movies/movies.html" class="index-mobile-nav__sublink" data-nav="movies">영화 홈</a>
+          <a href="movies/movies.html?category=now-playing" class="index-mobile-nav__sublink">현재 상영작</a>
+          <a href="movies/movies.html?category=upcoming" class="index-mobile-nav__sublink">상영 예정작</a>
+        </div>
+
+        <div class="index-mobile-nav__group">
+          <p class="index-mobile-nav__label">TV</p>
+          <a href="tv/tv.html" class="index-mobile-nav__sublink" data-nav="tv">TV 홈</a>
+          <a href="tv/tv.html?category=on-the-air" class="index-mobile-nav__sublink">방영 중</a>
+          <a href="tv/tv.html?category=popular" class="index-mobile-nav__sublink">인기 시리즈</a>
+        </div>
+
+        <div class="index-mobile-nav__group">
+          <p class="index-mobile-nav__label">이벤트</p>
+          <a href="event/list.html" class="index-mobile-nav__sublink" data-nav="events">이벤트 홈</a>
+          <a href="event/list.html?category=onsite" class="index-mobile-nav__sublink">현장 이벤트</a>
+          <a href="event/list.html?category=preview" class="index-mobile-nav__sublink">시사회</a>
+          <a href="event/list.html?category=cinetalk" class="index-mobile-nav__sublink">씨네토크</a>
+        </div>
+
+        <div class="index-mobile-nav__group">
+          <p class="index-mobile-nav__label">커뮤니티</p>
+          <a href="board/list.html" class="index-mobile-nav__sublink" data-nav="community">공지사항</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="index-header__mega" aria-label="서브 메뉴">
+      <div class="index-header__mega-inner">
+        <div class="index-header__mega-col index-header__mega-col--movies" data-mega="movies">
+          <a href="movies/movies.html?category=now-playing" class="index-header__mega-link">현재 상영작</a>
+          <a href="movies/movies.html?category=upcoming" class="index-header__mega-link">상영 예정작</a>
+        </div>
+        <div class="index-header__mega-col index-header__mega-col--tv" data-mega="tv">
+          <a href="tv/tv.html?category=on-the-air" class="index-header__mega-link">방영 중</a>
+          <a href="tv/tv.html?category=popular" class="index-header__mega-link">인기 시리즈</a>
+        </div>
+        <div class="index-header__mega-col index-header__mega-col--events" data-mega="events">
+          <a href="event/list.html?category=onsite" class="index-header__mega-link">현장 이벤트</a>
+          <a href="event/list.html?category=preview" class="index-header__mega-link">시사회</a>
+          <a href="event/list.html?category=cinetalk" class="index-header__mega-link">씨네토크</a>
+        </div>
+        <div class="index-header__mega-col index-header__mega-col--community" data-mega="community">
+          <a href="board/list.html" class="index-header__mega-link">공지사항</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-slider-section" aria-label="오늘의 추천">
+    <div class="hero-slider" id="today-pick">
+      <div class="hero-slider__viewport" id="hero-slider-viewport">
+        <div class="hero-slider__track" id="hero-slider-track">
+          <article class="hero-slide hero-slide--skeleton hero-slide--active" aria-hidden="true">
+            <div class="hero-slide__inner"></div>
+          </article>
+        </div>
+      </div>
+      <button type="button" class="hero-slider__arrow hero-slider__arrow--prev" id="hero-slider-prev" aria-label="이전">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M15 18l-6-6 6-6"></path>
+        </svg>
+      </button>
+      <button type="button" class="hero-slider__arrow hero-slider__arrow--next" id="hero-slider-next" aria-label="다음">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M9 18l6-6-6-6"></path>
+        </svg>
+      </button>
+      <div class="hero-slider__status">
+        <button type="button" class="hero-slider__pause" id="hero-slider-pause" aria-label="자동 재생 일시정지">
+          <svg class="hero-slider__pause-icon hero-slider__pause-icon--pause" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <rect x="6" y="5" width="4" height="14"></rect>
+            <rect x="14" y="5" width="4" height="14"></rect>
+          </svg>
+          <svg class="hero-slider__pause-icon hero-slider__pause-icon--play" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <div class="hero-slider__pager">
+          <span class="hero-slider__counter" id="hero-slider-counter" aria-live="polite">
+            <span class="hero-slider__counter-current">01</span><span class="hero-slider__counter-sep"> / </span><span class="hero-slider__counter-total">07</span>
+          </span>
+          <a href="movies/movies.html?category=now-playing" class="hero-slider__more" aria-label="전체 보기">+</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="index-main">
+    <section class="tv-series-section tv-series-section--lead" id="now-playing-movies" aria-label="현재 상영중인 영화">
+      <div class="tv-series-section__head">
+        <a href="movies/movies.html?category=now-playing" class="tv-series-section__head-link">
+          <h2 class="tv-series-section__title">현재 상영중인 영화</h2>
+        </a>
+      </div>
+
+      <section class="carousel-section" id="movies">
+      <div class="carousel-viewport" id="carousel-viewport">
+        <div class="movies-row" id="movies-row">
+          <div class="loading" id="loading">영화를 불러오는 중...</div>
+        </div>
+      </div>
+      <p class="error" id="error" hidden></p>
+
+      <div class="carousel-controls">
+        <div class="carousel-progress">
+          <div class="carousel-progress__bar" id="carousel-progress"></div>
+        </div>
+        <div class="carousel-buttons">
+          <button type="button" class="carousel-btn" id="carousel-prev" aria-label="이전">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 18l-6-6 6-6"></path>
+            </svg>
+          </button>
+          <button type="button" class="carousel-btn" id="carousel-next" aria-label="다음">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 18l6-6-6-6"></path>
+            </svg>
+          </button>
+          <button type="button" class="carousel-btn carousel-btn--pause" id="carousel-pause" aria-label="자동 재생 일시정지">
+            <svg class="carousel-btn__icon carousel-btn__icon--pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <rect x="6" y="5" width="4" height="14"></rect>
+              <rect x="14" y="5" width="4" height="14"></rect>
+            </svg>
+            <svg class="carousel-btn__icon carousel-btn__icon--play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M8 5v14l11-7z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      </section>
+    </section>
+
+    <section class="tv-series-section" id="popular-movies" aria-label="인기 영화">
+      <div class="tv-series-section__head">
+        <a href="movies/movies.html" class="tv-series-section__head-link">
+          <h2 class="tv-series-section__title">인기 영화</h2>
+        </a>
+      </div>
+
+      <div class="tv-series-grid" id="popular-movies-grid" aria-label="인기 영화 목록">
+        <p class="tv-series-grid__loading" id="popular-movies-loading">인기 영화를 불러오는 중...</p>
+      </div>
+      <p class="error tv-series-grid__error" id="popular-movies-error" hidden></p>
+    </section>
+
+    <div class="event-section-band">
+      <section class="event-section" id="events">
+        <a href="event/list.html" class="event-section__head">
+          <h2 class="event-section__title">이벤트</h2>
+        </a>
+        <div class="event-section__grid" id="event-grid" aria-label="이벤트 목록"></div>
+      </section>
+    </div>
+
+    <section class="tv-series-section" id="popular-tv" aria-label="인기 TV 시리즈">
+      <div class="tv-series-section__head">
+        <a href="tv/tv.html?category=popular" class="tv-series-section__head-link">
+          <h2 class="tv-series-section__title">인기 TV 시리즈</h2>
+        </a>
+      </div>
+
+      <section class="carousel-section carousel-section--tv" id="popular-tv-carousel">
+        <div class="carousel-viewport" id="popular-tv-carousel-viewport">
+          <div class="movies-row" id="popular-tv-row">
+            <div class="loading" id="popular-tv-loading">인기 TV 시리즈를 불러오는 중...</div>
+          </div>
+        </div>
+        <p class="error" id="popular-tv-error" hidden></p>
+
+        <div class="carousel-controls">
+          <div class="carousel-progress">
+            <div class="carousel-progress__bar" id="popular-tv-carousel-progress"></div>
+          </div>
+          <div class="carousel-buttons">
+            <button type="button" class="carousel-btn" id="popular-tv-carousel-prev" aria-label="이전">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6"></path>
+              </svg>
+            </button>
+            <button type="button" class="carousel-btn" id="popular-tv-carousel-next" aria-label="다음">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"></path>
+              </svg>
+            </button>
+            <button type="button" class="carousel-btn carousel-btn--pause carousel-btn--paused" id="popular-tv-carousel-pause" aria-label="자동 재생 재개">
+              <svg class="carousel-btn__icon carousel-btn__icon--pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <rect x="6" y="5" width="4" height="14"></rect>
+                <rect x="14" y="5" width="4" height="14"></rect>
+              </svg>
+              <svg class="carousel-btn__icon carousel-btn__icon--play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M8 5v14l11-7z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="tv-series-section" id="tv-series" aria-label="TV 시리즈">
+      <div class="tv-series-section__head">
+        <a href="tv/tv.html?category=on-the-air" class="tv-series-section__head-link">
+          <h2 class="tv-series-section__title">TV 시리즈</h2>
+        </a>
+      </div>
+
+      <div class="tv-series-grid" id="tv-series-grid" aria-label="TV 시리즈 목록">
+        <p class="tv-series-grid__loading" id="tv-loading">TV 시리즈를 불러오는 중...</p>
+      </div>
+      <p class="error tv-series-grid__error" id="tv-error" hidden></p>
+    </section>
+  </main>
+
+  <footer class="index-footer">
+    <a href="index.html" class="index-footer__logo-link">
+      <img src="img/logo.png" alt="YSCine" class="index-footer__logo">
+    </a>
+    <nav class="index-footer__nav" aria-label="푸터 메뉴">
+      <a href="index.html" data-nav="home">홈</a>
+      <a href="movies/movies.html" data-nav="movies">영화</a>
+      <a href="tv/tv.html" data-nav="tv">TV</a>
+      <a href="event/list.html" data-nav="events">이벤트</a>
+      <a href="board/list.html" data-nav="community">커뮤니티</a>
+    </nav>
+    <p class="index-footer__copy">© 2026 YSCine. All rights reserved.</p>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="event/js/events-data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
