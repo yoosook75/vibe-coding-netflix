@@ -1,0 +1,7 @@
+{
+  "name": "vibe-coding-netflix",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/generate-config.js"
+  }
+}
